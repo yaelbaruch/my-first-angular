@@ -8,8 +8,8 @@ import { USERS } from '../fake_users';
   styleUrl: './user.css',
 })
 export class User {
-@Input() name!: string;
-@Input() avatar!: string;
+@Input() name : string ="";
+@Input() avatar : string="";
 changeUser()
 {
   const randomIndex=Math.floor(Math.random()*USERS.length);
@@ -17,7 +17,7 @@ changeUser()
 
 }
   selectedUser=USERS[0];
-  get userImgPath(){
-    return 'assets/users/' + this.selectedUser.avatar;
+  get userImgPath() {
+    return 'assets/users/users/' + this.avatar;
   }
 }

@@ -1,4 +1,3 @@
-
 export const USERS = [
   {
     id: 'u1',
