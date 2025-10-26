@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { USERS } from '../fake_users';
 
 @Component({
@@ -8,6 +8,8 @@ import { USERS } from '../fake_users';
   styleUrl: './user.css',
 })
 export class User {
+@Input() name!: string;
+@Input() avatar!: string;
 changeUser()
 {
   const randomIndex=Math.floor(Math.random()*USERS.length);
