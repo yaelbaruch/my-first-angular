@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output,EventEmitter} from '@angular/core';
 import { USERS } from '../fake_users';
 
 @Component({
@@ -10,6 +10,8 @@ import { USERS } from '../fake_users';
 export class User {
 @Input() name : string ="";
 @Input() avatar : string="";
+@Input() id : string="";
+@Output() userSelected= new EventEmitter<string>();
 changeUser()
 {
   const randomIndex=Math.floor(Math.random()*USERS.length);
@@ -19,5 +21,8 @@ changeUser()
   selectedUser=USERS[0];
   get userImgPath() {
     return 'assets/users/users/' + this.avatar;
+  }
+  onUserClick(){
+    this.userSelected.emit(this.id)
   }
 }

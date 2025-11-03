@@ -1,6 +1,6 @@
-<div>
-    <button (click)= "changeUser()">
-        <img src= 'userImgPath'>
-        <span>{{name}}</span>
-    </button>
-</div>
+<div class="user-card">
+    <img [src]="'src/assets/users/' + avatar" alt="{{name}}">
+    <h3>{{ name }}</h3>
+    <button (click)="onUserClick()">בחר</button>
+  </div>
+  

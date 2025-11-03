@@ -11,5 +11,12 @@ import { USERS } from './fake_users';
 })
 export class App {
   users= USERS;
+  selectedUser: any = null;
   protected readonly title = signal('my-first-app');
+  onUserSelected(id: string) {
+    console.log('onUserSelected id:', id);
+    this.selectedUser = this.users.find((u: any) => u.id === id);
+    console.log('selectedUser:', this.selectedUser);
+
+}
 }

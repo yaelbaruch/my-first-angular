@@ -3,8 +3,10 @@
 <main>
     <ul id="users">
         <li>
-            <app-user [name]="users[0].name" [avatar]="users[0].avatar"></app-user>
-            <app-user [name]="users[1].name" [avatar]="users[1].avatar"></app-user>
+            <app-user [name]="users[0].name" [avatar]="users[0].avatar" [id]="users[0].id" (userSelected)="onUserSelected($event)"></app-user>
+            <app-user [name]="users[1].name" [avatar]="users[1].avatar" [id]="users[1].id" (userSelected)="onUserSelected($event)"></app-user>
+            
         </li>
     </ul>
+    <p>נבחר: {{ selectedUser ? selectedUser.name : 'לא נבחר עדיין משתמש' }}</p>
 </main>
